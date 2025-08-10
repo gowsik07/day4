@@ -1,0 +1,42 @@
+package day4assessment;
+import java.util.Scanner;
+public class hackerrank1{
+    public static int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int gokulPower = scanner.nextInt();
+        int minorPower = scanner.nextInt();
+        int totalPower = scanner.nextInt();
+        int gokulScore = 0;
+        int minorScore = 0;
+        boolean isGokulTurn = true;
+        while (totalPower > 0) {
+            if (isGokulTurn) {
+                int g = gcd(gokulPower, totalPower);
+                gokulScore += g;
+                totalPower -= g;
+            } else {
+                int g = gcd(minorPower, totalPower);
+                minorScore += g;
+                totalPower -= g;
+            }
+            isGokulTurn = !isGokulTurn;
+        }
+        if (gokulScore > minorScore) {
+            System.out.println("Winner: Gokul");
+        } else if (minorScore > gokulScore) {
+            System.out.println("Winner: Minor");
+        } else {
+            System.out.println("It's a draw!");
+        }
+    }
+}
+
+
