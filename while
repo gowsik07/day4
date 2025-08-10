@@ -1,0 +1,19 @@
+package day4;
+import java.util.Scanner;
+public class While{
+	public static void main(String[] args) {
+				Scanner sc=new Scanner(System.in);
+				int a=20;
+				while(a!=1) {
+					System.out.println(a);
+					a--;
+				}
+			}
+
+		}
+	
+
+
+
+
+
