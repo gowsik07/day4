@@ -1,0 +1,21 @@
+package day4;
+import java.util.Scanner;
+public class sumofdigitadd{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int a=sc.nextInt();
+		int r=0;
+		int s=0;
+		while(a!=0) {
+			r=r+(a%10);
+			a=a/10;
+		}
+		while(r!=0) {
+			s=s+(r%10);
+			r=r/10;
+		}System.out.println(s);
+	}
+}
+
+
