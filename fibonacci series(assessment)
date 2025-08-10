@@ -1,0 +1,18 @@
+package day4assessment;
+import java.util.Scanner;
+public class fibonacciseries {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int count = scanner.nextInt();
+        int first = 0, second = 1;
+        System.out.print(first + " " + second);
+        for (int i = 2; i < count; i++) {
+            int next = first + second;
+            System.out.print(" " + next);
+            first = second;
+            second = next;
+        }
+        scanner.close();
+    }
+}
+
